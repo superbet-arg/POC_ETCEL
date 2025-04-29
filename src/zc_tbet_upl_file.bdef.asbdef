@@ -1,0 +1,29 @@
+projection implementation in class ZBP_C_TBET_UPL_FILE unique;
+strict ( 2 );
+use draft;
+define behavior for ZC_TBET_UPL_FILE alias Files
+use etag
+
+{
+  use create;
+  use update;
+  use delete;
+
+field ( readonly ) status , LocalLastChangedAt ;
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+  use action uploadExcelData;
+
+    use association _fileres { create; with draft; }
+}
+
+define behavior for zc_tbet_file_res alias FileRes
+{
+  use update;
+  use delete;
+  use association _file { with draft; }
+  use action saveResMon;
+}

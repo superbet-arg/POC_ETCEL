@@ -1,0 +1,71 @@
+managed implementation in class ZBP_R_TBET_UPL_FILE unique;
+strict ( 2 );
+with draft;
+define behavior for ZR_TBET_UPL_FILE alias File
+persistent table ztbet_upl_file
+lock master total etag LocalLastChangedAt
+draft table ztbet_upl_file_d
+authorization master ( global )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+  // Logic to convert uploaded excel into internal table and save to the child entity is written here
+  action ( features : instance ) uploadExcelData result [1] $self;
+
+  field ( readonly )
+  LocalCreatedBy,
+  LocalCreatedAt,
+  LocalLastChangedBy,
+  LocalLastChangedAt,
+  LastChanged;
+
+  //////////  association _fileres { create; with draft; }
+  // Logic to trigger action uploadExcelData
+  determination fields on modify { field Filename, IdUpload;  }
+  draft action Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  association _FileRes { create; with draft; }
+
+//  mapping for ztbet_upl_file
+//    {
+//      AccdocUuid         = accdoc_uuid;
+//      IdUpload           = id_upload;
+//      Attachment         = attachment;
+//      Mimetype           = mimetype;
+//      Filename           = filename;
+//      Status             = status;
+//      ErrorLog           = error_log;
+//      LocalCreatedBy     = local_created_by;
+//      LocalCreatedAt     = local_created_at;
+//      LocalLastChangedBy = local_last_changed_by;
+//      LocalLastChangedAt = local_last_changed_at;
+//      LastChanged        = last_changed;
+//    }
+}
+
+
+define behavior for ZR_TBET_FILE_RES alias FileRes
+persistent table ztbet_file_det
+lock dependent by _File
+draft table ztbet_file_detd
+authorization dependent by _File
+etag master LocalLastChangedAt
+{
+  update;
+  delete;
+  field ( readonly ) idupload;
+  field ( readonly ) accdocuuid;
+  field ( readonly ) bukrs;
+  field ( readonly ) belnr;
+  field ( readonly ) gjahr;
+
+  association _file { with draft; }
+  // Logic to process the uploaded data from excel
+  action saveResMon result [1] $self;
+}

@@ -1,0 +1,209 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'IdUpload'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'IdUpload'
+annotate view ZC_TBET_FILE_DET with
+{
+  @EndUserText.label: 'AccdocUuid'
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'AccdocUuid'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    label: 'AccdocUuid'
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  AccdocUuid;
+  
+  @EndUserText.label: 'IdUpload'
+  @UI.facet: [ {
+    label: 'General Information', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 20 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'IdUpload'
+  } ]
+  @UI.lineItem: [ {
+    position: 20 , 
+    label: 'IdUpload'
+  } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+  IdUpload;
+  
+  @EndUserText.label: 'Bukrs'
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'Bukrs'
+  } ]
+  @UI.lineItem: [ {
+    position: 30 , 
+    label: 'Bukrs'
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  Bukrs;
+  
+  @EndUserText.label: 'Belnr'
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'Belnr'
+  } ]
+  @UI.lineItem: [ {
+    position: 40 , 
+    label: 'Belnr'
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  Belnr;
+  
+  @EndUserText.label: 'Gjahr'
+  @UI.identification: [ {
+    position: 50 , 
+    label: 'Gjahr'
+  } ]
+  @UI.lineItem: [ {
+    position: 50 , 
+    label: 'Gjahr'
+  } ]
+  @UI.selectionField: [ {
+    position: 50 
+  } ]
+  Gjahr;
+  
+  @EndUserText.label: 'Buzei'
+  @UI.identification: [ {
+    position: 60 , 
+    label: 'Buzei'
+  } ]
+  @UI.lineItem: [ {
+    position: 60 , 
+    label: 'Buzei'
+  } ]
+  @UI.selectionField: [ {
+    position: 60 
+  } ]
+  Buzei;
+  
+  @EndUserText.label: 'Blart'
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'Blart'
+  } ]
+  @UI.lineItem: [ {
+    position: 70 , 
+    label: 'Blart'
+  } ]
+  @UI.selectionField: [ {
+    position: 70 
+  } ]
+  Blart;
+  
+  @EndUserText.label: 'Bldat'
+  @UI.identification: [ {
+    position: 80 , 
+    label: 'Bldat'
+  } ]
+  @UI.lineItem: [ {
+    position: 80 , 
+    label: 'Bldat'
+  } ]
+  @UI.selectionField: [ {
+    position: 80 
+  } ]
+  Bldat;
+  
+  @EndUserText.label: 'Usnam'
+  @UI.identification: [ {
+    position: 90 , 
+    label: 'Usnam'
+  } ]
+  @UI.lineItem: [ {
+    position: 90 , 
+    label: 'Usnam'
+  } ]
+  @UI.selectionField: [ {
+    position: 90 
+  } ]
+  Usnam;
+  
+  @EndUserText.label: 'Kostl'
+  @UI.identification: [ {
+    position: 100 , 
+    label: 'Kostl'
+  } ]
+  @UI.lineItem: [ {
+    position: 100 , 
+    label: 'Kostl'
+  } ]
+  @UI.selectionField: [ {
+    position: 100 
+  } ]
+  Kostl;
+  
+  @UI.identification: [ {
+    position: 110 
+  } ]
+  @UI.lineItem: [ {
+    position: 110 
+  } ]
+  @UI.selectionField: [ {
+    position: 110 
+  } ]
+  LocalCreatedBy;
+  
+  @UI.identification: [ {
+    position: 120 
+  } ]
+  @UI.lineItem: [ {
+    position: 120 
+  } ]
+  @UI.selectionField: [ {
+    position: 120 
+  } ]
+  LocalCreatedAt;
+  
+  @UI.identification: [ {
+    position: 130 
+  } ]
+  @UI.lineItem: [ {
+    position: 130 
+  } ]
+  @UI.selectionField: [ {
+    position: 130 
+  } ]
+  LocalLastChangedBy;
+  
+  @UI.identification: [ {
+    position: 140 
+  } ]
+  @UI.lineItem: [ {
+    position: 140 
+  } ]
+  @UI.selectionField: [ {
+    position: 140 
+  } ]
+  LocalLastChangedAt;
+  
+  @UI.identification: [ {
+    position: 150 
+  } ]
+  @UI.lineItem: [ {
+    position: 150 
+  } ]
+  @UI.selectionField: [ {
+    position: 150 
+  } ]
+  LastChanged;
+}
