@@ -26,4 +26,5 @@ define behavior for zc_tbet_file_res alias FileRes
   use delete;
   use association _file { with draft; }
   use action saveResMon;
+  use action loadReg;
 }

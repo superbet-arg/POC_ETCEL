@@ -67,5 +67,6 @@ etag master LocalLastChangedAt
 
   association _file { with draft; }
   // Logic to process the uploaded data from excel
-  action saveResMon result [1] $self;
+  action (features : instance ) saveResMon result [1] $self;
+  action (features : instance ) loadReg result [1] $self;
 }

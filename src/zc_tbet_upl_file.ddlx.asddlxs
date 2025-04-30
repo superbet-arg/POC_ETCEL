@@ -5,28 +5,28 @@ annotate entity ZC_TBET_UPL_FILE
 
   @UI.facet: [
       /* Header Fecets and Datapoints */
-      { purpose: #HEADER,             
-        id:'HDR_USER',        
-        type: #DATAPOINT_REFERENCE,      
-        position: 10, 
-        targetQualifier: 'id_upload' },
-      { purpose: #HEADER,             
-        id:'HDR_FILE',        
-        type: #DATAPOINT_REFERENCE,      
-        position: 20, 
-        targetQualifier: 'Local_Last_Changed_At' },
-      { purpose: #HEADER,             
-        id:'HDR_STATUS',      
-        type: #DATAPOINT_REFERENCE,      
-        position: 30, 
-        targetQualifier: 'status' },
+//      { purpose: #HEADER,             
+//        id: 'ID_UPLOAD', // 'HDR_USER',        
+//        type: #DATAPOINT_REFERENCE,      
+//        position: 10, 
+//        targetQualifier: 'id_upload' },
+//      { purpose: #HEADER,             
+//        id: 'FILE', // 'HDR_FILE',        
+//        type: #DATAPOINT_REFERENCE,      
+//        position: 20, 
+//        targetQualifier: 'Local_Last_Changed_At' },
+  //    { purpose: #HEADER,             
+  //      id:'HDR_STATUS',      
+  //      type: #DATAPOINT_REFERENCE,      
+  //      position: 30, 
+  //      targetQualifier: 'status' },
         
   //**----  Body facets
       { label: 'File Information',    
         id: 'Attachment',     
         type: #COLLECTION,               
         position: 10  },
-      { label: 'Invoice Details',     
+      { label: 'File',     
         id: 'Invoicedet',     
         type: #IDENTIFICATION_REFERENCE, 
         position: 10,                             
@@ -52,9 +52,15 @@ annotate entity ZC_TBET_UPL_FILE
 
   @UI: { lineItem:       [ { position: 10, 
                              importance: #HIGH , 
-                             label: 'Id Upload'}  ] ,
+                             label: 'Id Upload'} ,
+                             
+                                                          { type: #FOR_ACTION, dataAction: 'loadReg', label: 'Extract Records' },
+                              { type: #FOR_ACTION, dataAction: 'saveResMon', label: 'Save Records' } ] ,
          identification: [ { position: 10 , 
-                             label: 'Id Upload' } ],
+                             label: 'Id Upload' } ,
+                             { type: #FOR_ACTION, dataAction: 'loadReg', label: 'Extract Records' },
+                              { type: #FOR_ACTION, dataAction: 'saveResMon', label: 'Save Records' }
+                              ],
                      //     { type: #FOR_ACTION, dataAction: 'uploadExcelData', label: 'Validate and Show' } ] ,
          dataPoint:        { title: 'Id Upload', targetValueElement: 'IdUpload' } }
   IdUpload;

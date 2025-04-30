@@ -47,6 +47,11 @@ CLASS lhc_FileRes DEFINITION INHERITING FROM cl_abap_behavior_handler.
 
     METHODS saveResMon FOR MODIFY
       IMPORTING keys FOR ACTION FileRes~saveResMon RESULT result.
+    METHODS get_instance_features FOR INSTANCE FEATURES
+      IMPORTING keys REQUEST requested_features FOR FileRes RESULT result.
+
+    METHODS loadReg FOR MODIFY
+      IMPORTING keys FOR ACTION FileRes~loadReg RESULT result.
 
 ENDCLASS.
 
@@ -58,6 +63,16 @@ CLASS lhc_FileRes IMPLEMENTATION.
   METHOD saveResMon.
 
     if 1 = 2.
+  endif.
+
+  ENDMETHOD.
+
+  METHOD get_instance_features.
+  ENDMETHOD.
+
+  METHOD loadReg.
+
+      if 1 = 2.
   endif.
 
   ENDMETHOD.
